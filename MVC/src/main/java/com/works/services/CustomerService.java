@@ -22,7 +22,8 @@ public class CustomerService {
             Customer c = optionalCustomer.get();
             String dbPassword = tinkEncDec.decrypt( c.getPassword() );
             if (dbPassword.equals(customer.getPassword())) {
-                req.getSession().setAttribute("customer", customer);
+                c.setPassword(null);
+                req.getSession().setAttribute("customer", c);
                 return true;
             }
         }
