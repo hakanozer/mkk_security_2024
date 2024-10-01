@@ -24,6 +24,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String loginPost(@Valid Customer customer, BindingResult bindingResult, Model model){
+        /*
         if (bindingResult.hasErrors()){
             model.addAttribute("error",bindingResult.getFieldErrors());
             return "login";
@@ -32,6 +33,8 @@ public class LoginController {
         if (loginStatus){
             return "redirect:/dashboard";
         }
+         */
+        model.addAttribute("email", customer.getEmail());
         return "login";
     }
 

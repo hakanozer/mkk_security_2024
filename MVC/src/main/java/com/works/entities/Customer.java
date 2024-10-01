@@ -16,8 +16,8 @@ public class Customer {
     @Size(min = 5, max = 100)
     @NotNull
     @NotEmpty
-    @Email
-    @Column(length = 100)
+    //@Email
+    @Column(length = 200)
     private String email;
 
     @Size(min = 5, max = 500)

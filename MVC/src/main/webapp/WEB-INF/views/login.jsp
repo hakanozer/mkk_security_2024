@@ -21,10 +21,11 @@
                         <div>${item.getField()} - ${item.getDefaultMessage()}</div>
                     </c:forEach>
                 </c:if>
+                <div><c:out value="${email}"></c:out> </div>
                 <form method="post" action="login">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input required name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
