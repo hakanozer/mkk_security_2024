@@ -15,8 +15,10 @@ public class CustomerService {
     final CustomerRepository customerRepository;
     final TinkEncDec tinkEncDec;
     final HttpServletRequest req;
+    final AdminService adminService;
 
     public boolean customerLogin(Customer customer) {
+        /*
         Optional<Customer> optionalCustomer = customerRepository.findByEmailEqualsIgnoreCase(customer.getEmail());
         if (optionalCustomer.isPresent()) {
             Customer c = optionalCustomer.get();
@@ -26,6 +28,12 @@ public class CustomerService {
                 req.getSession().setAttribute("customer", c);
                 return true;
             }
+        }
+         */
+        boolean status = adminService.login(customer.getEmail(), customer.getPassword());
+        if (status) {
+            req.getSession().setAttribute("customer", customer.getEmail());
+            return true;
         }
         return false;
     }

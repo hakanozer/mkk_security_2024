@@ -47,8 +47,9 @@ public class GlobalFilter implements Filter {
         if (loginStatus) {
             Object objSession = req.getSession().getAttribute("customer");
             if (objSession != null) {
-                Customer customer = (Customer) objSession;
-                userEmail = customer.getEmail();
+                // Customer customer = (Customer) objSession;
+                String customer = (String) objSession;
+                userEmail = customer;
                 filterChain.doFilter(req, res);
             }else {
                 res.sendRedirect("/");
