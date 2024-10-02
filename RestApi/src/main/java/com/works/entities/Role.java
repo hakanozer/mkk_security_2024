@@ -8,14 +8,13 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Note extends Base {
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer nid;
+    private Long rid;
 
-    private String title;
-    private String detail;
+    private String name;
 
 
 }
